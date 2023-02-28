@@ -102,13 +102,18 @@ describe('multiply', () => {
     expect(actual).toBe(expected);
   });
 
-    test('can multiply by zero', () => {
-      expected = 0;
-      actual = multiply(17856877731, 0);
-      expect(actual).toBe(expected);
-    });
-    
+  test('can multiply by zero', () => {
+    expected = 0;
+    actual = multiply(17856877731, 0);
+    expect(actual).toBe(expected);
   });
+
+  // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
+  test('can multiply two decimal numbers', () => {
+    expect(1.6 * 1.9).toBeCloseTo(3.04, 2);
+  });
+
+});
 
 describe('divide', () => {
 
@@ -141,6 +146,11 @@ describe('divide', () => {
     actual = divide(900, 0);
       expect(actual).toBe(expected);
   });
+
+  // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
+  test('can divide two decimal numbers', () => {
+    expect(0.2 / 0.9).toBeCloseTo(0.2, 1);
+  });
     
   });
 
@@ -166,8 +176,8 @@ describe('modulus', () => {
   });
 
   test('can modulo two decimal numbers', () => {
-    expected = 1.9999999999999978;
-    actual = modulus(54.5, 2.1);
+    expected = 70.98689000000002;
+    actual = modulus(781.998, 711.01111);
     expect(actual).toBe(expected);  
   });
 
@@ -175,6 +185,11 @@ describe('modulus', () => {
     expected = 0;
     actual = modulus(0, 166);
     expect(actual).toBe(expected);
+  });
+
+  // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
+  test('can modulo two decimal numbers', () => {
+    expect(5.5 % 2.1).toBeCloseTo(1.29, 1);
   });
 
 });
@@ -189,7 +204,7 @@ describe('even', () => {
 
   test('can find out whether a large number is even', () => {
     expected = true;
-    actual = even(123465789123456); // This is almost the maximum of testing
+    actual = even(123465789123456); // This is almost the maximum number of digits for testing
     expect(actual).toBe(expected);
   });
 
@@ -210,10 +225,13 @@ describe('even', () => {
     actual = even(0);
     expect(actual).toBe(expected);
   });
+
+  // Extension 4: Using '.not' modifier
+  test('can find out whether a large number is even', () => {
+    expect(119007).not.toBe('true');
+  });
     
   });
-
-
 
 describe('odd', () => {
 
@@ -245,6 +263,11 @@ describe('odd', () => {
     expected = false;
     actual = odd(0);
     expect(actual).toBe(expected);
+  });
+
+  // Extension 4: Using '.not' modifier
+  test('can find out whether zero is odd', () => {
+    expect(0).not.toBe('true');
   });
 
 });

@@ -19,7 +19,6 @@ const modulus = function(a, b){
 }
 
 // Extension 2: Refactoring code to make it DRY
-
 const even = function(a){
     if (modulus(a, 2) == 0){
      return true;
@@ -29,7 +28,6 @@ const even = function(a){
  }
 
 // Original answer:
-
 // const even = function(a){
 //    if (a % 2 === 0){
 //     return true;
@@ -39,7 +37,6 @@ const even = function(a){
 // }
 
 // Extension 2: Refactoring code to make it DRY
-
 const odd = function(b){
     if (!even(b)){
         return true;
@@ -49,7 +46,6 @@ const odd = function(b){
 }
 
 // Original answer:
-
 // const odd = function(b){
 //     if (b % 2 !== 0){
 //         return true;
