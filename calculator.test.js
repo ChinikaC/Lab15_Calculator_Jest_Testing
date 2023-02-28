@@ -76,16 +76,71 @@ describe('multiply', () => {
 
 describe('divide', () => {
 
+  test('can divide two small numbers', () => {
+    expected = 4;
+    actual = divide(8, 2);
+    expect(actual).toBe(expected);
+    
+  });
+
+  test('can divide two large numbers', () => {
+    expected = 83.33333333333333;
+    actual = divide(50000, 600);
+    expect(actual).toBe(expected);
+    
+  });
+
 });
 
 describe('modulus', () => {
+  test('can modulo two small numbers', () => {
+    expected = 1;
+    actual = modulus(11, 2);
+    expect(actual).toBe(expected);
+    
+  });
+
+  test('can modulo two decimal numbers', () => {
+    expected = 1.9999999999999978;
+    actual = modulus(54.5, 2.1);
+    expect(actual).toBe(expected);
+    
+  });
+  
 
 });
 
 describe('even', () => {
+  test('can find out whether a large number is even', () => {
+    expected = true;
+    actual = even(420);
+    expect(actual).toBe(expected);
+    
+  });
+
+  test('can find out whether a decimal number is even', () => {
+    expected = false;
+    actual = even(0.5);
+    expect(actual).toBe(expected);
+    
+  });
 
 });
 
 describe('odd', () => {
+
+  test('can find out whether a small number is odd', () => {
+    expected = true;
+    actual = odd(5);
+    expect(actual).toBe(expected);
+    
+  });
+
+  test('can find out whether zero is odd', () => {
+    expected = false;
+    actual = odd(0);
+    expect(actual).toBe(expected);
+    
+  });
 
 });

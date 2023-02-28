@@ -19,11 +19,19 @@ const modulus = function(a, b){
 }
 
 const even = function(a){
-    return a % 2 == 0;
+   if (a % 2 === 0){
+    return true;
+   } else {
+    return false;
+   }
 }
 
 const odd = function(b){
-    return b % 1 == 0;
+    if (b % 2 !== 0){
+        return true;
+       } else {
+        return false;
+       }
 }
 
 module.exports = { 
