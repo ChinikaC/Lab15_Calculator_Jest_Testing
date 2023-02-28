@@ -63,8 +63,8 @@ describe('subtract', () => {
   });
 
   test('can subtract two decimal numbers', () => {
-    expected = 0.39999999999999997;
-    actual = subtract(0.7, 0.3);
+    expected = -0.39999999999999997;
+    actual = subtract(-0.7, -0.3);
     expect(actual).toBe(expected);   
   });
 
@@ -137,7 +137,7 @@ describe('divide', () => {
 
   test('can divide two decimal numbers', () => {
     expected = 7.64449085350528;
-    actual = divide(16.72821, 2.18827);
+    actual = divide(-16.72821, -2.18827);
     expect(actual).toBe(expected);   
   });
 
