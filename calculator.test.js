@@ -26,121 +26,225 @@ describe('sum', () => {
     expected = -15;
     actual = sum(-9, -6);
     expect(actual).toBe(expected);
-    
+  });
+
+  test('can add two decimal numbers', () => {
+    expected =  5.3469809999999995;
+    actual = sum(2.23467, 3.112311);
+    expect(actual).toBe(expected);   
   });
 
   test('can add zero', () => {
     expected = 22;
     actual = sum(22, 0);
-    expect(actual).toBe(expected);
-    
+    expect(actual).toBe(expected); 
   });
 
 });
 
 describe('subtract', () => {
 
-  test('can subtract two small decimal numbers', () => {
-    expected = 0.39999999999999997;
-    actual = subtract(0.7, 0.3);
+  test('can subtract two small positive numbers', () => {
+    expected = 3;
+    actual = subtract(4, 1);
     expect(actual).toBe(expected);
-    
   });
 
-  test('can subtract two large negative numbers', () => {
+  test('can subtract two large positive numbers', () => { 
+    expected = 91020000;
+    actual = subtract(91200000, 180000);
+    expect(actual).toBe(expected);
+  });
+
+  test('can subtract two negative numbers', () => {
     expected = 174375000000;
     actual = subtract(175000000000, 625000000);
     expect(actual).toBe(expected);
-    
+  });
+
+  test('can subtract two decimal numbers', () => {
+    expected = 0.39999999999999997;
+    actual = subtract(0.7, 0.3);
+    expect(actual).toBe(expected);   
+  });
+
+  test('can subtract zero', () => {
+    expected = 500;
+    actual = subtract(500, 0);
+    expect(actual).toBe(expected); 
   });
 
 });
 
 describe('multiply', () => {
 
-  test('can multiply two large negative numbers', () => {
-    expected = 6471110400000;
-    actual = multiply(-8088888, -800000);
+  test('can multiply two small positive numbers', () => {
+    expected = 1;
+    actual = multiply(1, 1);
     expect(actual).toBe(expected);
-    
   });
 
-  test('can multiply two large decimal numbers', () => {
+  test('can multiply two large positive numbers', () => { 
+    expected = 112320000000000;
+    actual = multiply(2400000, 46800000);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two negative numbers', () => {
+    expected = 6471110400000;
+    actual = multiply(-8088888, -800000);
+    expect(actual).toBe(expected); 
+  });
+
+  test('can multiply two decimal numbers', () => {
     expected = 77777692222.23;
     actual = multiply(999999.9, 77777.7);
     expect(actual).toBe(expected);
-    
   });
 
-});
+    test('can multiply by zero', () => {
+      expected = 0;
+      actual = multiply(17856877731, 0);
+      expect(actual).toBe(expected);
+    });
+    
+  });
 
 describe('divide', () => {
 
   test('can divide two small numbers', () => {
     expected = 4;
     actual = divide(8, 2);
-    expect(actual).toBe(expected);
-    
+    expect(actual).toBe(expected);  
   });
 
   test('can divide two large numbers', () => {
     expected =  8.333333333333334;
     actual = divide(50000000, 6000000);
     expect(actual).toBe(expected);
+  });
+
+  test('can divide two negative numbers', () => {
+    expected = 15.5651118026446;
+    actual = divide(-987690878, -63455431);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide two decimal numbers', () => {
+    expected = 7.64449085350528;
+    actual = divide(16.72821, 2.18827);
+    expect(actual).toBe(expected);   
+  });
+
+  test('can divide by zero', () => {
+    expected = Infinity;
+    actual = divide(900, 0);
+      expect(actual).toBe(expected);
+  });
     
   });
 
-});
 
 describe('modulus', () => {
+
   test('can modulo two small numbers', () => {
     expected = 1;
     actual = modulus(11, 2);
+    expect(actual).toBe(expected);  
+  });
+
+  test('can modulo two large numbers', () => {
+    expected =   2517241;
+    actual = modulus(98276521, 3546640);
     expect(actual).toBe(expected);
-    
+  });
+
+  test('can modulo two negative numbers', () => {
+    expected = -294;
+    actual = modulus(-10980, -411);
+    expect(actual).toBe(expected);
   });
 
   test('can modulo two decimal numbers', () => {
     expected = 1.9999999999999978;
     actual = modulus(54.5, 2.1);
-    expect(actual).toBe(expected);
-    
+    expect(actual).toBe(expected);  
   });
-  
+
+  test('can modulo zero', () => {
+    expected = 0;
+    actual = modulus(0, 166);
+    expect(actual).toBe(expected);
+  });
 
 });
 
 describe('even', () => {
+
+  test('can find out whether a small number is even', () => {
+    expected = true;
+    actual = even(18);
+    expect(actual).toBe(expected);
+  });
+
   test('can find out whether a large number is even', () => {
     expected = true;
     actual = even(123465789123456); // This is almost the maximum of testing
     expect(actual).toBe(expected);
-    
+  });
+
+  test('can find out whether a negative number is even', () => {
+    expected = false;
+    actual = even(-3477);
+    expect(actual).toBe(expected);
   });
 
   test('can find out whether a decimal number is even', () => {
     expected = false;
     actual = even(0.5679);
     expect(actual).toBe(expected);
+  });
+
+  test('can find out whether zero is even', () => {
+    expected = true;
+    actual = even(0);
+    expect(actual).toBe(expected);
+  });
     
   });
 
-});
+
 
 describe('odd', () => {
 
-  test('can find out whether a negative number is odd', () => {
+  test('can find out whether a small number is odd', () => {
     expected = true;
-    actual = odd(-555555);
+    actual = odd(7);
     expect(actual).toBe(expected);
-    
+  });
+
+  test('can find out whether a large number is odd', () => { 
+    expected = true;
+    actual = odd(733333333);
+    expect(actual).toBe(expected);
+  });
+
+  test('can find out whether a negative number is odd', () => {
+    expected = false;
+    actual = odd(-22222);
+    expect(actual).toBe(expected);
+  });
+
+  test('can find out whether a decimal number is odd', () => {
+    expected = true;
+    actual = odd(53.7);
+    expect(actual).toBe(expected);
   });
 
   test('can find out whether zero is odd', () => {
     expected = false;
     actual = odd(0);
     expect(actual).toBe(expected);
-    
   });
 
 });
