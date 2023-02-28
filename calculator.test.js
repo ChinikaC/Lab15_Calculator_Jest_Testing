@@ -17,8 +17,8 @@ describe('sum', () => {
   });
 
   test('can add two large positive numbers', () => { 
-    expected = 500;
-    actual = sum(300, 200);
+    expected = 402000000;
+    actual = sum(390000000, 12000000);
     expect(actual).toBe(expected);
   });
 
@@ -48,8 +48,8 @@ describe('subtract', () => {
   });
 
   test('can subtract two large negative numbers', () => {
-    expected = 400;
-    actual = subtract(1000, 600);
+    expected = 174375000000;
+    actual = subtract(175000000000, 625000000);
     expect(actual).toBe(expected);
     
   });
@@ -59,15 +59,15 @@ describe('subtract', () => {
 describe('multiply', () => {
 
   test('can multiply two large negative numbers', () => {
-    expected = 64000;
-    actual = multiply(-800, -80);
+    expected = 6471110400000;
+    actual = multiply(-8088888, -800000);
     expect(actual).toBe(expected);
     
   });
 
   test('can multiply two large decimal numbers', () => {
-    expected = 7762.2300000000005;
-    actual = multiply(99.9, 77.7);
+    expected = 77777692222.23;
+    actual = multiply(999999.9, 77777.7);
     expect(actual).toBe(expected);
     
   });
@@ -84,8 +84,8 @@ describe('divide', () => {
   });
 
   test('can divide two large numbers', () => {
-    expected = 83.33333333333333;
-    actual = divide(50000, 600);
+    expected =  8.333333333333334;
+    actual = divide(50000000, 6000000);
     expect(actual).toBe(expected);
     
   });
@@ -113,14 +113,14 @@ describe('modulus', () => {
 describe('even', () => {
   test('can find out whether a large number is even', () => {
     expected = true;
-    actual = even(420);
+    actual = even(123465789123456); // This is almost the maximum of testing
     expect(actual).toBe(expected);
     
   });
 
   test('can find out whether a decimal number is even', () => {
     expected = false;
-    actual = even(0.5);
+    actual = even(0.5679);
     expect(actual).toBe(expected);
     
   });
@@ -129,9 +129,9 @@ describe('even', () => {
 
 describe('odd', () => {
 
-  test('can find out whether a small number is odd', () => {
+  test('can find out whether a negative number is odd', () => {
     expected = true;
-    actual = odd(5);
+    actual = odd(-555555);
     expect(actual).toBe(expected);
     
   });
