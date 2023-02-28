@@ -152,7 +152,7 @@ describe('divide', () => {
     expect(0.2 / 0.9).toBeCloseTo(0.2, 1);
   });
     
-  });
+});
 
 
 describe('modulus', () => {
@@ -231,7 +231,7 @@ describe('even', () => {
     expect(119007).not.toBe('true');
   });
     
-  });
+});
 
 describe('odd', () => {
 
