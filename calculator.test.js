@@ -108,7 +108,7 @@ describe('multiply', () => {
     expect(actual).toBe(expected);
   });
 
-  // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
+  // Extension: Using '.toBeCloseTo(number, numDigits?)' matcher
   test('can multiply two decimal numbers', () => {
     expect(1.6 * 1.9).toBeCloseTo(3.04, 2);
   });
@@ -147,9 +147,9 @@ describe('divide', () => {
       expect(actual).toBe(expected);
   });
 
-  // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
+  // Extension: Using '.toBeCloseTo(number, numDigits?)' matcher
   test('can divide two decimal numbers', () => {
-    expect(0.2 / 0.9).toBeCloseTo(0.2, 1);
+    expect(0.2 / 0.9).toBeCloseTo(0.222, 3);
   });
     
 });
@@ -187,7 +187,7 @@ describe('modulus', () => {
     expect(actual).toBe(expected);
   });
 
-  // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
+  // Extension: Using '.toBeCloseTo(number, numDigits?)' matcher
   test('can calculate modulus of two decimal numbers', () => {
     expect(5.5 % 2.1).toBeCloseTo(1.29, 1);
   });
@@ -226,7 +226,7 @@ describe('even', () => {
     expect(actual).toBe(expected);
   });
 
-  // Extension 4: Using '.not' modifier
+  // Extension: Using '.not' modifier
   test('can find out whether a large number is even', () => {
     expect(119007).not.toBe('true');
   });
@@ -265,7 +265,7 @@ describe('odd', () => {
     expect(actual).toBe(expected);
   });
 
-  // Extension 4: Using '.not' modifier
+  // Extension: Using '.not' modifier
   test('can find out whether zero is odd', () => {
     expect(0).not.toBe('true');
   });

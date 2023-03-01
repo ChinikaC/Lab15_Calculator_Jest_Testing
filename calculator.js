@@ -19,12 +19,22 @@ const modulus = function(a, b){
 }
 
 // Extension 2: Refactoring code to make it DRY
+// const even = function(a){
+//     if (modulus(a, 2) == 0){
+//      return true;
+//     } else {
+//      return false;
+//     }
+//  }
+
+//  // Better way to refactor:
+//  const even = function(a){
+//     return a % 2 ===0;
+//  }
+
+// Another better way to refactor:
 const even = function(a){
-    if (modulus(a, 2) == 0){
-     return true;
-    } else {
-     return false;
-    }
+    return modulus(a, 2) ===0;
  }
 
 // Original answer:
@@ -37,13 +47,23 @@ const even = function(a){
 // }
 
 // Extension 2: Refactoring code to make it DRY
-const odd = function(b){
-    if (!even(b)){
-        return true;
-       } else {
-        return false;
-       }
-}
+// const odd = function(b){
+//     if (!even(b)){
+//         return true;
+//        } else {
+//         return false;
+//        }
+// }
+
+// A better way to refactor:
+// const odd = function(a){
+//     return a % 2 !==0;
+//  }
+
+ // Another better way to refactor:
+const odd = function(a){
+    return modulus(a, 2) !==0;
+ }
 
 // Original answer:
 // const odd = function(b){
