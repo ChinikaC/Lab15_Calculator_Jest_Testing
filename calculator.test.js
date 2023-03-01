@@ -157,38 +157,38 @@ describe('divide', () => {
 
 describe('modulus', () => {
 
-  test('can modulo two small numbers', () => {
+  test('can calculate modulus of two small numbers', () => {
     expected = 1;
     actual = modulus(11, 2);
     expect(actual).toBe(expected);  
   });
 
-  test('can modulo two large numbers', () => {
+  test('can calculate modulus of two large numbers', () => {
     expected =   2517241;
     actual = modulus(98276521, 3546640);
     expect(actual).toBe(expected);
   });
 
-  test('can modulo two negative numbers', () => {
+  test('can calculate modulus of negative numbers', () => {
     expected = -294;
     actual = modulus(-10980, -411);
     expect(actual).toBe(expected);
   });
 
-  test('can modulo two decimal numbers', () => {
+  test('can calculate modulus of two decimal numbers', () => {
     expected = 70.98689000000002;
     actual = modulus(781.998, 711.01111);
     expect(actual).toBe(expected);  
   });
 
-  test('can modulo zero', () => {
+  test('can calculate modulus of zero', () => {
     expected = 0;
     actual = modulus(0, 166);
     expect(actual).toBe(expected);
   });
 
   // Extension 4: Using '.toBeCloseTo(number, numDigits?)' matcher
-  test('can modulo two decimal numbers', () => {
+  test('can calculate modulus of two decimal numbers', () => {
     expect(5.5 % 2.1).toBeCloseTo(1.29, 1);
   });
 
